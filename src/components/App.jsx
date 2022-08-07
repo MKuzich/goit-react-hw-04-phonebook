@@ -4,7 +4,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Contacts } from 'components/Contacts/Contacts';
 import { ContactAddForm } from 'components/ContactAddForm/ContactAddForm';
 import { Filter } from 'components/Filter/Filter';
-import styles from './App.module.css';
+import { Header, SecondHeader, Section } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -57,18 +57,18 @@ export class App extends Component {
   render() {
     return (
       <>
-        <section className={styles.section}>
-          <h1 className={styles.header}>Phonebook</h1>
+        <Section>
+          <Header>Phonebook</Header>
 
           <ContactAddForm contactsChange={this.contactsChange} />
-          <h2 className={styles.header}>Contacts</h2>
+          <SecondHeader>Contacts</SecondHeader>
           <Filter filterChange={this.filterChange} />
           <Contacts
             contacts={this.state.contacts}
             filter={this.state.filter}
             deleteContact={this.deleteContact}
           />
-        </section>
+        </Section>
       </>
     );
   }

@@ -1,20 +1,15 @@
 import React from 'react';
-import styles from './Contact.module.css';
+import { Button, Item } from './Contact.styled';
 import PropTypes from 'prop-types';
 
 export const Contact = ({ deleteContact, name, number, id }) => {
   return (
-    <li className={styles.contact}>
+    <Item>
       {name}: {number}
-      <button
-        className={styles.btn}
-        type="button"
-        onClick={deleteContact}
-        id={id}
-      >
+      <Button type="button" onClick={deleteContact} id={id}>
         Delete
-      </button>
-    </li>
+      </Button>
+    </Item>
   );
 };
 
