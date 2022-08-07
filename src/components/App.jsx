@@ -25,7 +25,7 @@ export const App = () => {
       return;
     }
     localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  }, [contacts, isFirstMount]);
 
   const deleteContact = e => {
     setContacts(prevState =>
